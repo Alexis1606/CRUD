@@ -43,7 +43,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Classes">
-      <HintPath>..\..\..\..\c# classes\Git\Classes\Classes\Classes\bin\Debug\Classes.dll</HintPath>
+      <HintPath>..\..\..\Classes\Classes\Classes\bin\Debug\Classes.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.VisualC" />
@@ -76,19 +76,19 @@
       <Package>monodevelop-core-addins</Package>
     </Reference>
     <Reference Include="MySql.Web">
-      <HintPath>..\..\..\..\c# classes\Classes\Drivers mysql\v4.5\MySql.Web.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Drivers mysql\v4.5\MySql.Web.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Fabric.Plugin">
-      <HintPath>..\..\..\..\c# classes\Classes\Drivers mysql\v4.5\MySql.Fabric.Plugin.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Drivers mysql\v4.5\MySql.Fabric.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data.Entity.EF6">
-      <HintPath>..\..\..\..\c# classes\Classes\Drivers mysql\v4.5\MySql.Data.Entity.EF6.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Drivers mysql\v4.5\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data.Entity.EF5">
-      <HintPath>..\..\..\..\c# classes\Classes\Drivers mysql\v4.5\MySql.Data.Entity.EF5.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Drivers mysql\v4.5\MySql.Data.Entity.EF5.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\c# classes\Classes\Drivers mysql\v4.5\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Drivers mysql\v4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Configuration" />

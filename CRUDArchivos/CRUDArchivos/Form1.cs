@@ -14,6 +14,7 @@ namespace CRUDArchivos
 {
     public partial class Form1 : Form
     {
+        TextBox[] t;
         bool terminate = false;
         string ruta = "";
         DataBase db;
@@ -26,6 +27,14 @@ namespace CRUDArchivos
         private void Form1_Load(object sender, EventArgs e)
         {
             menuStrip1.Enabled = false;
+
+            if (radioButton1.Checked == false) {
+                Txt_DB.Enabled = false;
+                Txt_Pass.Enabled = false;
+                Txt_SErvidor.Enabled = false;
+                Txt_Usuario.Enabled = false;
+
+            }
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,12 +47,12 @@ namespace CRUDArchivos
 
 			Altas a ;
 			if (radioButton1.Checked) {
-				MessageBox.Show ("Creating form");
+				//MessageBox.Show ("Creating form");
 				a = new Altas (db);
 			}
 			else
 				a = new Altas(ruta);
-			MessageBox.Show ("Form created");
+			//MessageBox.Show ("Form created");
 			a.Show();
 			this.Hide();
 
@@ -190,13 +199,31 @@ namespace CRUDArchivos
             }
         }
 
+        private void llenarTXT()
+        {
+            t = new TextBox[] { Txt_DB, Txt_Pass, Txt_SErvidor, Txt_Usuario };
+        }
+
 
         //Prueba la conexión a la base de datos
         //En caso de una conexi[on exitosa activa el menustrip1
         private void Btn_Validar_Click(object sender, EventArgs e)
         {
             string serverType = "";
-            
+            int cont = 0;
+            llenarTXT();
+            //Valida si todos los textbox tienen información, en caso contrario los pone en rojo
+            for (int i = 0; i < t.Length; i++)
+            {
+                if (t[i].Text == "")
+                {
+                    t[i].BackColor = Color.Red;
+                    cont++;
+                }
+            }
+            if (cont > 0)
+                MessageBox.Show("Llena los campos en rojo");
+
             if (Txt_DB.Text != "" && Txt_Pass.Text != "" && Txt_SErvidor.Text != "" && Txt_Usuario.Text != "")
             {
                 if (rMySQL.Checked)
@@ -216,6 +243,26 @@ namespace CRUDArchivos
                     MessageBox.Show("Conexión fallida");
             }
 
+        }
+
+        private void Txt_SErvidor_TextChanged(object sender, EventArgs e)
+        {
+            Txt_SErvidor.BackColor = Color.White;
+        }
+
+        private void Txt_DB_TextChanged(object sender, EventArgs e)
+        {
+            Txt_DB.BackColor = Color.White;
+        }
+
+        private void Txt_Usuario_TextChanged(object sender, EventArgs e)
+        {
+            Txt_Usuario.BackColor = Color.White;
+        }
+
+        private void Txt_Pass_TextChanged(object sender, EventArgs e)
+        {
+            Txt_Pass.BackColor = Color.White;
         }
     }
 }
